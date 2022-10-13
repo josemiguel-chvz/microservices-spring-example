@@ -19,9 +19,10 @@ public class EmployeeService {
     RestTemplate restTemplate;
 
     public List<EmployeeModel> getEmployees() {
+        // String url = "http://localhost:8181/employees/all";
         String url = "http://employee-service/employees/all";
         ResponseEntity<Object[]> response = restTemplate.getForEntity(url, Object[].class); // Se usa lista de Object para mapear la repuesta JSON
-        Object[] records = response.getBody(); // Obtener lista de empleados desde servicio empleados
+        Object[] records = response.getBody(); // Obtener lista de empleados desde microservicio empleados
         if (records == null) {
             return null;
         }
