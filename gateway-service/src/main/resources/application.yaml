@@ -17,6 +17,10 @@ spring:
           uri: lb://report-service
           predicates:
             - Path=/reports/**
+        - id: schedule-service
+          uri: lb://schedule-service
+          predicates:
+            - Path=/schedules/**
 eureka:
   client:
     fetch-registry: true
