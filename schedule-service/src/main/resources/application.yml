@@ -1,0 +1,24 @@
+
+spring:
+  application:
+    name: schedule-service
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/mydb
+    username: user
+    password: password
+    driverClassName: org.postgresql.Driver
+server:
+  port: 8383
+  forward-headers-strategy: framework
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
