@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: employee-service
+  datasource:
+    url:
+      jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: test
+    password: 123456
+  h2:
+    console:
+      enabled: true
+jpa:
+  show-sql: true
+  hibernate:
+    dialect: org.hibernate.dialect.H2Dialect
+    ddl-auto: create
+  database-platform: org.hibernate.dialect.H2Dialect
+server:
+  port: 8181
+  forward-headers-strategy: framework
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
